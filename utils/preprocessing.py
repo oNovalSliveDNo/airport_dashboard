@@ -1,7 +1,10 @@
 # utils/preprocessing.py
+
+import streamlit as st
 import pandas as pd
 
 
+@st.cache_data
 def load_passenger_data():
     passenger_df = pd.read_csv("data/transformed.csv", parse_dates=["Date"])
     print("Датасет 'data/transformed.csv' загружен!")
